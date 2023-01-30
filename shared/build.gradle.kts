@@ -64,9 +64,9 @@ android {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "com.github.vtvinicius"
+            groupId = "com.github.VTVinicius"
             artifactId = "validations"
-            version = "1.0.0"
+            version = "1.0.3"
 
             from(components["kotlin"])
         }
