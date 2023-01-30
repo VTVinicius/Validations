@@ -1,11 +1,13 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("maven-publish")
+
 }
 
 kotlin {
     android()
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -52,5 +54,21 @@ android {
     defaultConfig {
         minSdk = 21
         targetSdk = 32
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.vtvinicius"
+            artifactId = "validations"
+            version = "1.0.0"
+
+            from(components["kotlin"])
+        }
     }
 }
