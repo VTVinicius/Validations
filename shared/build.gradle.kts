@@ -66,9 +66,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.github.VTVinicius"
             artifactId = "validations"
-            version = "1.0.5"
-
-            from(components["kotlin"])
+            version = "1.0.6"
         }
     }
 }
