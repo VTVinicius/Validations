@@ -1,14 +1,7 @@
 package br.com.vtvinicius.validations.domain
 
-import br.com.vtvinicius.validations.isNotCompoundName
-import br.com.vtvinicius.validations.isNotValidName
+interface ValidateNameUseCase {
 
-class ValidateNameUseCase {
+    fun invoke(name: String): Boolean
 
-    operator fun invoke(name: String): Boolean {
-        return if (name.isNotValidName()) {
-            false
-        } else !name.isNotCompoundName()
-
-    }
 }
